@@ -1,0 +1,27 @@
+{
+  "name": "spaceforce",
+  "version": "1.0.0",
+  "description": "## Contributors",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haileedoyle/spaceforce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haileedoyle/spaceforce/issues"
+  },
+  "homepage": "https://github.com/haileedoyle/spaceforce#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.19"
+  }
+}
