@@ -3,3 +3,4 @@
 ## Contributors
 
 - Alex Wander
+- Hailee Doyle 
