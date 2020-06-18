@@ -1,2 +1,5 @@
-# spaceforce
-Project 3 with Alex Wander and Alex Ronalds
+# Space Force
+
+## Contributors
+
+- Alex Wander
