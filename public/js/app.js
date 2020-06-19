@@ -4,106 +4,89 @@ const app = angular.module("SpaceForceApp", []);
 app.controller("BaseControl", [
   "$http",
   function ($http) {
-  // Global Variables
-  const controller = this
+    // Global Variables
+    this.newFlight = {};
 
-
-
-  //======
+    //======
     // editFlight
-  //======
-
-    this.editFlight = function(flight) {
-      $http(
-        {
-            method: 'PUT',
-            url: '/flights/' + flight._id,
-            data:
-              {
-                flightNumber: this.updatedNumber,
-                departureTime: this.updatedTime,
-                destination: this.updatedDestination,
-                price: this.updatedPrice
-              }
-        }
-      ).then(
-        function() {
-          controller.getFlights()
+    //======
+    this.editFlight = (flight) => {
+      $http({
+        method: "PUT",
+        url: "/flights/" + flight._id,
+        data: {
+          flightNumber: this.updatedNumber,
+          departureTime: this.updatedTime,
+          destination: this.updatedDestination,
+          price: this.updatedPrice,
         },
-        function(error) {
+      }).then(
+        function () {
+          this.getFlights();
+        },
+        function (error) {
           console.log(error);
         }
-      )
-    }
+      );
+    };
 
     //======
-      // deleteFlight
+    // deleteFlight
     //======
-
-    this.deleteFlight = function(flight) {
-      $http(
-        {
-            method: 'DELETE',
-            url: '/flights/' + flight._id
-        }
-      ).then(
-        function(response) {
-          controller.getFlights()
+    this.deleteFlight = (flight) => {
+      $http({
+        method: "DELETE",
+        url: "/flights/" + flight._id,
+      }).then(
+        function (response) {
+          this.getFlights();
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
-      )
-    }
+      );
+    };
 
     //======
-      // getFlights
+    // getFlights
     //======
-
-    this.getFlights = function(){
-      $http(
-        {
-            method: 'GET',
-            url: '/flights'
-        }
-      ).then(
-        function(response) {
-          controller.flights = response.data
+    this.getFlights = () => {
+      $http({
+        method: "GET",
+        url: "/flights",
+      }).then(
+        function (response) {
+          this.flights = response.data;
+          console.log(flights);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
-      )
-    }
+      );
+    };
 
     //======
-      // createFlight
+    // createFlight
     //======
-
-    this.createFlight = function(){
-      $http(
-        {
-            method: 'POST',
-            url: '/flights',
-            data:
-              {
-                flightNumber: this.flightNumber,
-                departureTime: this.departureTime,
-                destination: this.destination,
-                price: this.price
-              }
-        }).then(
-        function(response) {
-          controller.getFlights()
+    this.createFlight = () => {
+      $http({
+        method: "POST",
+        url: "/flights",
+        data: this.newFlight,
+      }).then(
+        function (response) {
+          this.newFlight = {};
+          this.getFlights();
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
-      )
-    }
+      );
+    };
+
     // On Page Load
-      this.getFlights()
-      
+    this.getFlights();
+
     // End of BaseControl
   },
 ]);
