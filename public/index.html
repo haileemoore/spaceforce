@@ -13,69 +13,11 @@
   </head>
   <body ng-controller="BaseControl as ctrl">
     <div class="container">
-      <h1>Space Force Travel</h1>
-      <!-- Create Flight Form -->
-      <form ng-submit="ctrl.createFlight()">
-        <input
-          type="number"
-          ng-model="ctrl.newFlight.flightNumber"
-          placeholder="Rocket Number"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.departureTime"
-          placeholder="Departure Time"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.destination"
-          placeholder="Destination"
-        />
-        <input
-          type="number"
-          ng-model="ctrl.newFlight.price"
-          placeholder="Price"
-        />
-        <input type="submit" value="Submit" />
-      </form>
-      <!-- End Create Flight Form -->
-      <!-- Show Flights -->
-      <div ng-repeat="flight in ctrl.flights">
-        <h2>{{flight.flightNumber}}</h2>
-        <h3>{{flight.departureTime}}</h3>
-        <h3>{{flight.destination}}</h3>
-        <h1>{{flight.price}}</h1>
-        <!-- Edit Flights -->
-        <div>
-          <form ng-submit="ctrl.editFlight(flight)">
-            <input
-              type="number"
-              ng-model="ctrl.updateFlight.flightNumber"
-              placeholder="Rocket Number"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.departureTime"
-              placeholder="Departure Time"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.destination"
-              placeholder="Destination"
-            />
-            <input
-              type="number"
-              ng-model="ctrl.updateFlight.price"
-              placeholder="Price"
-            />
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-        <!-- End Edit Flights -->
-        <!-- Delete Flights -->
-        <a href="#" ng-click="ctrl.deleteFlight(flight)">Delete</a>
-      </div>
-      <!-- End Show Flights -->
+      <!-- NAVBAR -->
+      <nav ng-include="'partials/nav.html'"></nav>
+      <!-- FLIGHT BUTTONS -->
+      <button>Moon Flights</button>
+      <button>Mars Flights</button>
     </div>
   </body>
 </html>

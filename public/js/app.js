@@ -2,6 +2,16 @@ const app = angular.module("SpaceForceApp", []);
 
 // BaseControl
 app.controller("BaseControl", [
+  function () {
+    // Path Function
+    this.changePath = (path) => {
+      this.includePath = "partials/" + path + ".html";
+    };
+  },
+]);
+
+// FlightsControl
+app.controller("FlightsControl", [
   "$http",
   function ($http) {
     // Global Variables
