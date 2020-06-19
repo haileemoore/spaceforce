@@ -1,14 +1,27 @@
 const app = angular.module("SpaceForceApp", []);
 
 // BaseControl
-app.controller =
-  ("BaseControl",
-  [
-    "$http",
-    function ($http) {
-      // Global Variables
-      this.hello = "Hello World!";
+app.controller("BaseControl", [
+  "$http",
+  function ($http) {
+    // Global Variables
+    console.log(this);
 
-      // End of BaseControl
-    },
-  ]);
+    this.hello = "Hello World!";
+
+    // On Page Load
+    $http({
+      method: "GET",
+      url: "/flights",
+    }).then(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+
+    // End of BaseControl
+  },
+]);
