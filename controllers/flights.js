@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 // Update
-router.put("/id", (req, res) => {
+router.put("/:id", (req, res) => {
   Flights.findByIdAndUpdate(
     req.params.id,
     req.body,
