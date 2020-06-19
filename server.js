@@ -1,6 +1,6 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
+const app = express();
 require("dotenv").config();
 
 // Port - Allow use of Heroku's port or your own local port, depending on the environment
@@ -30,8 +30,9 @@ mongoose.connect(
   }
 );
 
-// Index
-app.get("/", (req, res) => res.send("Space Force!"));
+// Controllers
+const flightsController = require("./controllers/flights.js");
+app.use("/flights", flightsController);
 
 // Listener
 app.listen(PORT, () =>
