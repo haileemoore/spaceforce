@@ -7,7 +7,7 @@ app.controller("BaseControl", [
   // Global Variables
   const controller = this
 
-  // On Page Load
+
 
   //======
     // editFlight
@@ -101,7 +101,9 @@ app.controller("BaseControl", [
         }
       )
     }
-
+    // On Page Load
+      this.getFlights()
+      
     // End of BaseControl
   },
 ]);
