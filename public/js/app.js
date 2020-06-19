@@ -1,14 +1,14 @@
 const app = angular.module("SpaceForceApp", []);
 
 // BaseControl
-app.controller("BaseControl", [
-  function () {
-    // Path Function
-    this.changePath = (path) => {
-      this.includePath = "partials/" + path + ".html";
-    };
-  },
-]);
+// app.controller("BaseControl", [
+//   function () {
+//     // Path Function
+//     this.changePath = (path) => {
+//       this.includePath = "partials/" + path + ".html";
+//     };
+//   },
+// ]);
 
 // FlightsControl
 app.controller("FlightsControl", [
@@ -17,6 +17,7 @@ app.controller("FlightsControl", [
     // Global Variables
     this.newFlight = {};
     this.updateFlight = {};
+    this.loggedInUser = false
 
     ///////////////////////
     // CRUD FOR FLIGHTS
@@ -94,7 +95,13 @@ app.controller("FlightsControl", [
     this.signup = () => {};
 
     // Log In
-    this.login = () => {};
+    this.login = () => {
+      $http(
+        {
+          
+        }
+      )
+    };
 
     // Log Out
     this.logout = () => {};
