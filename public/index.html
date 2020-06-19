@@ -13,6 +13,7 @@
   </head>
   <body ng-controller="BaseControl as ctrl">
     <h1>Space Force Travel</h1>
+    <!-- Create Flight Form -->
     <form ng-submit="ctrl.createFlight()">
       <input
         type="number"
@@ -36,12 +37,14 @@
       />
       <input type="submit" value="Submit" />
     </form>
+    <!-- End Create Flight Form -->
+    <!-- Show Flights -->
     <div ng-repeat="flight in ctrl.flights">
-      <!-- Data -->
-      <h2>{{ flight.flightNumber }}</h2>
-      <h3>{{ flight.departureTime }}</h3>
-      <h3>{{ flight.destination }}</h3>
-      <h1>{{ flight.price }}</h1>
+      <h2>{{flight.flightNumber}}</h2>
+      <h3>{{flight.departureTime}}</h3>
+      <h3>{{flight.destination}}</h3>
+      <h1>{{flight.price}}</h1>
     </div>
+    <!-- End Show Flights -->
   </body>
 </html>
