@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body ng-controller="BaseControl as ctrl">
+    <!-- NAVBAR -->
+    <nav ng-include="'partials/nav.html'"></nav>
     <div class="container">
-      <!-- NAVBAR -->
-      <nav ng-include="'partials/nav.html'"></nav>
+      <div ng-include="ctrl.includePath"></div>
       <!-- FLIGHT BUTTONS -->
       <button>Moon Flights</button>
       <button>Mars Flights</button>
