@@ -11,8 +11,97 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/app.css" />
   </head>
-  <body ng-controller="BaseControl as ctrl">
-    <h1>Space Force Travel</h1>
-    <h2>{{ ctrl.hello }}</h2>
+  <body ng-controller="FlightsControl as ctrl">
+    <div class="container">
+      <h1>Space Force Travel</h1>
+      <!-- Nav -->
+      <nav>
+        <h5 ng-click="ctrl.changePath('flights')">Flights</h5>
+      <section ng-if="ctrl.loggedInUser === false">
+        <!-- Sign Up Form -->
+        <h5 ng-click="ctrl.changePath('signup')">Sign Up</h5>
+          <form ng-submit="ctrl.signup()">
+              Username: <input type="text" ng-model="ctrl.signupUsername" /><br/>
+              Password: <input type="password" ng-model="ctrl.signupPassword"/><br/>
+              <input type="submit" value="Sign Up"/>
+          </form>
+          <!-- Login Form -->
+        <h5 ng-click="ctrl.changePath('login')">Log In</h5>
+        <form ng-submit="ctrl.login()">
+            Username: <input type="text" ng-model="ctrl.loginUsername" /><br/>
+            Password: <input type="password" ng-model="ctrl.loginPassword"/><br/>
+            <input type="submit" value="Log in"/>
+        </form>
+      </section>
+      <!-- Log Out Form -->
+      <section ng-if="ctrl.loggedInUser !== false">
+          <button ng-click="ctrl.logout()">Log Out</button>
+      </section>
+      </nav>
+      <!-- Create Flight Form -->
+      <form ng-submit="ctrl.createFlight()">
+        <input
+          type="number"
+          ng-model="ctrl.newFlight.flightNumber"
+          placeholder="Rocket Number"
+        />
+        <input
+          type="text"
+          ng-model="ctrl.newFlight.departureTime"
+          placeholder="Departure Time"
+        />
+        <input
+          type="text"
+          ng-model="ctrl.newFlight.destination"
+          placeholder="Destination"
+        />
+        <input
+          type="number"
+          ng-model="ctrl.newFlight.price"
+          placeholder="Price"
+        />
+        <input type="submit" value="Submit" />
+      </form>
+      <!-- End Create Flight Form -->
+      <!-- <div ng-include="ctrl.includePath"> -->
+      <!-- Show Flights -->
+      <div ng-repeat="flight in ctrl.flights">
+        <h2>{{flight.flightNumber}}</h2>
+        <h3>{{flight.departureTime}}</h3>
+        <h3>{{flight.destination}}</h3>
+        <h1>{{flight.price}}</h1>
+        <!-- Edit Flights -->
+        <div>
+          <form ng-submit="ctrl.editFlight(flight)">
+            <input
+              type="number"
+              ng-model="ctrl.updateFlight.flightNumber"
+              placeholder="Rocket Number"
+            />
+            <input
+              type="text"
+              ng-model="ctrl.updateFlight.departureTime"
+              placeholder="Departure Time"
+            />
+            <input
+              type="text"
+              ng-model="ctrl.updateFlight.destination"
+              placeholder="Destination"
+            />
+            <input
+              type="number"
+              ng-model="ctrl.updateFlight.price"
+              placeholder="Price"
+            />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <!-- End Edit Flights -->
+        <!-- Delete Flights -->
+        <a href="#" ng-click="ctrl.deleteFlight(flight)">Delete</a>
+        <!-- </div> -->
+      </div>
+      <!-- End Show Flights -->
+    </div>
   </body>
 </html>

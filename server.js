@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require('express-session');
 const app = express();
 require("dotenv").config();
 
@@ -10,6 +11,12 @@ const PORT = process.env.PORT || 3333;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 // Middleware
+app.use(session({
+    secret:'highlyconfidential',
+    resave:false,
+    saveUninitialized:false
+}));
+
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -33,6 +40,12 @@ mongoose.connect(
 // Controllers
 const flightsController = require("./controllers/flights.js");
 app.use("/flights", flightsController);
+
+const userController = require("./controllers/users.js")
+app.use("/users", userController)
+
+const sessionController = require("./controllers/session.js")
+app.use("/session", sessionController)
 
 // Listener
 app.listen(PORT, () =>
