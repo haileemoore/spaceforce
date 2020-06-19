@@ -6,6 +6,7 @@ app.controller("BaseControl", [
   function ($http) {
     // Global Variables
     this.newFlight = {};
+    const controller = this
 
     //======
     // editFlight
@@ -56,8 +57,8 @@ app.controller("BaseControl", [
         url: "/flights",
       }).then(
         function (response) {
-          this.flights = response.data;
-          console.log(flights);
+          controller.flights = response.data;
+          console.log(controller.flights);
         },
         function (error) {
           console.log(error);
