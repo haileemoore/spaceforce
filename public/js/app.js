@@ -92,19 +92,56 @@ app.controller("FlightsControl", [
     ///////////////////////
 
     // Sign Up
-    this.signup = () => {};
+    this.signup = () => {
+      $http(
+          {
+              url:'/users',
+              method:'POST',
+              data: {
+                  username:this.signupUsername,
+                  password:this.signupPassword,
+              }
+          }
+      ).then(
+          function(response){
+              console.log(response);
+              controller.loggedInUser = response.data
+          }
+      )
+    };
 
     // Log In
     this.login = () => {
       $http(
-        {
-          
-        }
+          {
+              url:'/session',
+              method:'POST',
+              data: {
+                  username:this.loginUsername,
+                  password:this.loginPassword
+              }
+          }
+      ).then(
+          function(response){
+              if(response.data.username){
+                  controller.loggedInUser = response.data
+              } else {
+                  controller.loginUsername = null;
+                  controller.loginPassword = null;
+              }
+          }
       )
     };
 
     // Log Out
-    this.logout = () => {};
+    this.logout = () => {
+      $http({
+        url:'/session',
+        method:'DELETE'
+      }).then(function(){
+        controller.loggedInUser = false;
+      })
+    };
 
     ///////////////////////
     // On Page Load
