@@ -17,7 +17,7 @@ app.controller("FlightsControl", [
     // Global Variables
     this.newFlight = {};
     this.updateFlight = {};
-    this.loggedInUser = false
+    this.loggedInUser = false;
 
     ///////////////////////
     // CRUD FOR FLIGHTS
@@ -93,58 +93,50 @@ app.controller("FlightsControl", [
 
     // Sign Up
     this.signup = () => {
-      $http(
-          {
-              url:'/users',
-              method:'POST',
-              data: {
-                  username:this.signupUsername,
-                  password:this.signupPassword,
-              }
-          }
-      ).then(
-          (response) => {
-              console.log(response);
-              this.loggedInUser = response.data
-          }
-      )
+      $http({
+        url: "/users",
+        method: "POST",
+        data: {
+          username: this.signupUsername,
+          password: this.signupPassword,
+        },
+      }).then((response) => {
+        console.log(response);
+        this.loggedInUser = response.data;
+      });
     };
 
     // Log In
     this.login = () => {
-      $http(
-          {
-              url:'/session',
-              method:'POST',
-              data: {
-                  username:this.loginUsername,
-                  password:this.loginPassword
-              }
-          }
-      ).then(
-          (response) => {
-              if(response.data.username){
-                  this.loggedInUser = response.data
-              } else {
-                  this.loginUsername = null;
-                  this.loginPassword = null;
-              }
-          }
-      )
+      $http({
+        url: "/session",
+        method: "POST",
+        data: {
+          username: this.loginUsername,
+          password: this.loginPassword,
+        },
+      }).then((response) => {
+        if (response.data.username) {
+          this.loggedInUser = response.data;
+        } else {
+          this.loginUsername = null;
+          this.loginPassword = null;
+        }
+      });
     };
 
     // Log Out
     this.logout = () => {
       $http({
-        url:'/session',
-        method:'DELETE'
+        url: "/session",
+        method: "DELETE",
       }).then((response) => {
         this.loggedInUser = false;
         this.loginUsername = null;
         this.loginPassword = null;
         this.signupUsername = null;
         this.signupPassword = null;
-      })
+      });
     };
 
     ///////////////////////
