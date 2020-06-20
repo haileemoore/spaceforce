@@ -1,3 +1,25 @@
 <h5 ng-click="ctrl.changePath('flights')">Flights</h5>
-<h5 ng-click="ctrl.changePath('signup')">Sign Up</h5>
-<h5 ng-click="ctrl.changePath('login')">Log In</h5>
+<!-- Authentication -->
+<section ng-if="ctrl.loggedInUser === false">
+  <!-- Sign Up Form -->
+  <h5 ng-click="ctrl.changePath('signup')">Sign Up</h5>
+  <form ng-submit="ctrl.signup()">
+    Username: <input type="text" ng-model="ctrl.signupUsername" /><br />
+    Password:
+    <input type="password" ng-model="ctrl.signupPassword" /><br />
+    <input type="submit" value="Sign Up" />
+  </form>
+  <!-- Login Form -->
+  <h5 ng-click="ctrl.changePath('login')">Log In</h5>
+  <form ng-submit="ctrl.login()">
+    Username: <input type="text" ng-model="ctrl.loginUsername" /><br />
+    Password:
+    <input type="password" ng-model="ctrl.loginPassword" /><br />
+    <input type="submit" value="Log in" />
+  </form>
+</section>
+<!-- Log Out Form -->
+<section ng-if="ctrl.loggedInUser !== false">
+  <button ng-click="ctrl.logout()">Log Out</button>
+</section>
+<!-- End of Authentication -->
