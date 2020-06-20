@@ -1,25 +1,38 @@
-<h5 ng-click="ctrl.changePath('flights')">Flights</h5>
-<!-- Authentication -->
-<section ng-if="ctrl.loggedInUser === false">
+<ul class="nav justify-content-center">
+  <!-- Flights -->
+  <li>
+    <a ng-click="ctrl.changePath('flights')" class="nav-link">Flights</a>
+  </li>
+  <!-- Authentication -->
+  <!-- Sign Up -->
+  <li ng-if="ctrl.loggedInUser === false">
+    <a ng-click="ctrl.changePath('signup')" class="nav-link">Sign Up</a>
+  </li>
   <!-- Sign Up Form -->
-  <h5 ng-click="ctrl.changePath('signup')">Sign Up</h5>
   <form ng-submit="ctrl.signup()">
     Username: <input type="text" ng-model="ctrl.signupUsername" /><br />
     Password:
     <input type="password" ng-model="ctrl.signupPassword" /><br />
-    <input type="submit" value="Sign Up" />
+    <input type="submit" value="Sign Up" class="btn btn-primary" />
   </form>
+  <!-- Log In -->
+  <li ng-if="ctrl.loggedInUser === false">
+    <a ng-click="ctrl.changePath('login')" class="nav-link">Log In</a>
+  </li>
   <!-- Login Form -->
-  <h5 ng-click="ctrl.changePath('login')">Log In</h5>
   <form ng-submit="ctrl.login()">
     Username: <input type="text" ng-model="ctrl.loginUsername" /><br />
     Password:
     <input type="password" ng-model="ctrl.loginPassword" /><br />
-    <input type="submit" value="Log in" />
+    <input type="submit" value="Log in" class="btn btn-primary" />
   </form>
-</section>
-<!-- Log Out Form -->
-<section ng-if="ctrl.loggedInUser !== false">
-  <button ng-click="ctrl.logout()">Log Out</button>
-</section>
-<!-- End of Authentication -->
+  <!-- Log Out Form -->
+  <div ng-if="ctrl.loggedInUser !== false">
+    <li>
+      <a ng-click="ctrl.logout()" class="btn btn-danger" class="nav-link">
+        Log Out
+      </a>
+    </li>
+  </div>
+  <!-- End of Authentication -->
+</ul>
