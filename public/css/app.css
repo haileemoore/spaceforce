@@ -1,0 +1,40 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1057&q=80);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: black 4px 5px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: left;
+}
+
+nav a {
+  color: white;
+  text-align: center;
+  text-shadow: black 2px 3px;
+}
+
+form {
+  margin: 5px;
+}
+
+input {
+  margin: 10px;
+}
+
+.flight_info {
+  text-shadow: black 2px 3px;
+}

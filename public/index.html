@@ -41,6 +41,7 @@
       <nav ng-include="'./partials/nav.html'"></nav>
       <!-- Create Flight Form -->
       <form ng-submit="ctrl.createFlight()">
+        <h2>Create Flight</h2>
         <input
           type="number"
           ng-model="ctrl.newFlight.flightNumber"
@@ -67,13 +68,16 @@
       <!-- <div ng-include="ctrl.includePath"> -->
       <!-- Show Flights -->
       <div ng-repeat="flight in ctrl.flights">
-        <h2>Rocket Number: {{flight.flightNumber}}</h2>
-        <h3>Departure Time: {{flight.departureTime}}</h3>
-        <h3>Destination: {{flight.destination}}</h3>
-        <h1>Price: {{flight.price | currency}}</h1>
+        <div class="flight_info">
+          <h5>Rocket Number: {{flight.flightNumber}}</h5>
+          <h5>Departure Time: {{flight.departureTime}}</h5>
+          <h5>Destination: {{flight.destination}}</h5>
+          <h5>Price: {{flight.price | currency}}</h5>
+        </div>
         <!-- Edit Flights -->
         <div>
           <form ng-submit="ctrl.editFlight(flight)">
+            <h4>Edit Flight</h4>
             <input
               type="number"
               ng-model="ctrl.updateFlight.flightNumber"
