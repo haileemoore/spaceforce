@@ -5,7 +5,7 @@
   justify-content: center;
   background-image: url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1057&q=80);
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   color: white;
 }
 
@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  text-align: left;
+  text-align: center;
 }
 
 nav a {
