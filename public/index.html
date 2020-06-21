@@ -43,14 +43,24 @@
       <form ng-submit="ctrl.createFlight()">
         <h2>Create Flight</h2>
         <input
-          type="number"
-          ng-model="ctrl.newFlight.flightNumber"
-          placeholder="Rocket Number"
+          type="text"
+          ng-model="ctrl.newFlight.vehicleClass"
+          placeholder="Vehicle Class"
         />
         <input
           type="text"
-          ng-model="ctrl.newFlight.departureTime"
-          placeholder="Departure Time"
+          ng-model="ctrl.newFlight.carrier"
+          placeholder="Carrier"
+        />
+        <input
+          type="text"
+          ng-model="ctrl.newFlight.launchSite"
+          placeholder="Launch Site"
+        />
+        <input
+          type="text"
+          ng-model="ctrl.newFlight.launchWindow"
+          placeholder="Launch Window"
         />
         <input
           type="text"
@@ -69,9 +79,11 @@
       <!-- Show Flights -->
       <div ng-repeat="flight in ctrl.flights">
         <div class="flight_info">
-          <h5>Rocket Number: {{flight.flightNumber}}</h5>
-          <h5>Departure Time: {{flight.departureTime}}</h5>
-          <h5>Destination: {{flight.destination}}</h5>
+          <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
+          <h5>Carrier: {{flight.carrier}}</h5>
+          <h5>Launch Site: {{flight.launchSite}}</h5>
+          <h5>Launch Window: {{flight.launchWindow}}</h5>
+          <h5>Launch Window: {{flight.destination}}</h5>
           <h5>Price: {{flight.price | currency}}</h5>
         </div>
         <!-- Edit Flights -->
@@ -79,14 +91,25 @@
           <form ng-submit="ctrl.editFlight(flight)">
             <h4>Edit Flight</h4>
             <input
-              type="number"
-              ng-model="ctrl.updateFlight.flightNumber"
-              placeholder="Rocket Number"
+            <input
+              type="text"
+              ng-model="ctrl.updateFlight.vehicleClass"
+              placeholder="Vehicle Class"
             />
             <input
               type="text"
-              ng-model="ctrl.updateFlight.departureTime"
-              placeholder="Departure Time"
+              ng-model="ctrl.updateFlight.carrier"
+              placeholder="Carrier"
+            />
+            <input
+              type="text"
+              ng-model="ctrl.updateFlight.launchSite"
+              placeholder="Launch Site"
+            />
+            <input
+              type="text"
+              ng-model="ctrl.updateFlight.launchWindow"
+              placeholder="Launch Window"
             />
             <input
               type="text"
@@ -98,6 +121,7 @@
               ng-model="ctrl.updateFlight.price"
               placeholder="Price"
             />
+            <input type="submit" value="Submit" />
             <input type="submit" value="Submit" />
           </form>
         </div>

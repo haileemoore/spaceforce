@@ -36,3 +36,23 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
+
+router.get('/seed', async (req, res) => {
+  console.log('HIT SEED ROUTE')
+  const newFlights =
+  {
+    vehicleClass: "Falcon 9",
+    carrier: "SpaceX",
+    launchSite: "Cape Canaveral Air Force Station",
+    launchWindow: "February 15, 2020: 10:46 AM",
+    destination: "Earth Orbit",
+    price: 5700000,
+  }
+
+    try {
+      const seedItems = await Flights.create(newFlights)
+      res.redirect('/')
+    } catch (err) {
+      res.send(err.message)
+    }
+  })
