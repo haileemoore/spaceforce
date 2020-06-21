@@ -40,15 +40,23 @@ module.exports = router;
 router.get('/seed', async (req, res) => {
   console.log('HIT SEED ROUTE')
   const newFlights =
-  {
-    vehicleClass: "Falcon 9",
-    carrier: "SpaceX",
-    launchSite: "Cape Canaveral Air Force Station",
-    launchWindow: "February 15, 2020: 10:46 AM",
-    destination: "Earth Orbit",
-    price: 5700000,
-  }
-
+  [
+    {
+      vehicleClass: "Falcon 9",
+      carrier: "SpaceX",
+      launchSite: "Cape Canaveral Air Force Station",
+      launchWindow: "February 15, 2020: 10:46 AM",
+      destination: "Earth Orbit",
+      price: 5700000,
+    }, {
+      vehicleClass: "Atlas V",
+      carrier: "ULA",
+      launchSite: "Cape Canaveral Air Force Station",
+      launchWindow: "March 13th, 2020: 3:45 - 5:45PM EST",
+      destination: "Sub Earth Orbit",
+      price: 110000000,
+    }
+  ]
     try {
       const seedItems = await Flights.create(newFlights)
       res.redirect('/')
