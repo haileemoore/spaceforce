@@ -12,6 +12,11 @@ body {
   width: 100%
 }
 
+.edit_form {
+  background-color: #b06cae;
+  border-radius: 10px;
+}
+
 .flight_info {
   display: flex;
   flex-direction: column;

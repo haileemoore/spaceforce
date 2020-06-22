@@ -60,45 +60,45 @@
           <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
             >Delete</a
           >
+          <div class='edit_form'>
+            <form ng-submit="ctrl.editFlight(flight)">
+              <h2>Edit Flight</h2>
+              <input
+                <input
+                type="text"
+                ng-model="ctrl.updateFlight.vehicleClass"
+                placeholder="Vehicle Class"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.carrier"
+                placeholder="Carrier"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.launchSite"
+                placeholder="Launch Site"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.launchWindow"
+                placeholder="Launch Window"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.destination"
+                placeholder="Destination"
+              />
+              <input
+                type="number"
+                ng-model="ctrl.updateFlight.price"
+                placeholder="Price"
+              />
+              <input type="submit" value="Submit" class="btn btn-primary" />
+            </form>
 
         </div>
         <!-- Edit Flights -->
-        <div class='edit_form'>
-          <form ng-submit="ctrl.editFlight(flight)">
-            <h2>Edit Flight</h2>
-            <input
-              <input
-              type="text"
-              ng-model="ctrl.updateFlight.vehicleClass"
-              placeholder="Vehicle Class"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.carrier"
-              placeholder="Carrier"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.launchSite"
-              placeholder="Launch Site"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.launchWindow"
-              placeholder="Launch Window"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.destination"
-              placeholder="Destination"
-            />
-            <input
-              type="number"
-              ng-model="ctrl.updateFlight.price"
-              placeholder="Price"
-            />
-            <input type="submit" value="Submit" class="btn btn-primary" />
-          </form>
         </div>
         <!-- End Edit Flights -->
         <!-- Delete Flights -->
