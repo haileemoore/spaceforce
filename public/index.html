@@ -37,7 +37,9 @@
   <body ng-controller="FlightsControl as ctrl">
     <div class="container">
       <h1>Space Force Travel</h1>
-      <h2>Committed to fundamentally changing the way people have access to space.</h2>
+      <h2>
+        Committed to fundamentally changing the way people have access to space.
+      </h2>
       <!-- Nav -->
       <nav ng-include="'./partials/nav.html'"></nav>
       <!-- Create Flight Form -->
@@ -73,7 +75,7 @@
           ng-model="ctrl.newFlight.price"
           placeholder="Price"
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
       </form>
       <!-- End Create Flight Form -->
       <!-- <div ng-include="ctrl.includePath"> -->
@@ -92,7 +94,7 @@
           <form ng-submit="ctrl.editFlight(flight)">
             <h2>Edit Flight</h2>
             <input
-            <input
+              <input
               type="text"
               ng-model="ctrl.updateFlight.vehicleClass"
               placeholder="Vehicle Class"
@@ -122,13 +124,14 @@
               ng-model="ctrl.updateFlight.price"
               placeholder="Price"
             />
-            <input type="submit" value="Submit" />
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" class="btn btn-primary" />
           </form>
         </div>
         <!-- End Edit Flights -->
         <!-- Delete Flights -->
-        <a href="#" ng-click="ctrl.deleteFlight(flight)">Delete</a>
+        <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
+          >Delete</a
+        >
         <!-- </div> -->
       </div>
       <!-- End Show Flights -->
