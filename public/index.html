@@ -47,29 +47,36 @@
         ng-if="ctrl.loggedInUser.isAdmin === true"
         ng-include="'./partials/create.html'"
       ></div>
+      <!-- Sort Functionality -->
+      <div ng-include="'./partials/sort.html'"></div>
       <!-- <div ng-include="ctrl.includePath"> -->
       <!-- Show Flights -->
-      <div ng-repeat="flight in ctrl.flights">
-        <div class="flight_info">
-          <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
-          <h5>Carrier: {{flight.carrier}}</h5>
-          <h5>Launch Site: {{flight.launchSite}}</h5>
-          <h5>Launch Window: {{flight.launchWindow}}</h5>
-          <h5>Launch Window: {{flight.destination}}</h5>
-          <h5>Price: {{flight.price | currency}}</h5>
-        </div>
-        <!-- Edit Flights -->
-        <div
-          ng-if="ctrl.loggedInUser.isAdmin === true"
-          ng-include="'./partials/edit.html'"
-        ></div>
-        <!-- Delete Flights -->
-        <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
-          >Delete</a
-        >
-        <!-- </div> -->
-      </div>
-      <!-- End Show Flights -->
+      <ul>
+        <li ng-repeat="flight in ctrl.flights | orderBy: order">
+          <div class="flight_info">
+            <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
+            <h5>Carrier: {{flight.carrier}}</h5>
+            <h5>Launch Site: {{flight.launchSite}}</h5>
+            <h5>Launch Window: {{flight.launchWindow}}</h5>
+            <h5>Launch Window: {{flight.destination}}</h5>
+            <h5>Price: {{flight.price | currency}}</h5>
+          </div>
+          <!-- Edit Flights -->
+          <div
+            ng-if="ctrl.loggedInUser.isAdmin === true"
+            ng-include="'./partials/edit.html'"
+          ></div>
+          <!-- Delete Flights -->
+          <a
+            href="#"
+            ng-click="ctrl.deleteFlight(flight)"
+            class="btn btn-danger"
+            >Delete</a
+          >
+          <!-- </div> -->
+        </li>
+        <!-- End Show Flights -->
+      </ul>
     </div>
   </body>
 </html>
