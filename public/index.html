@@ -47,9 +47,11 @@
         ng-if="ctrl.loggedInUser.isAdmin === true"
         ng-include="'./partials/create.html'"
       ></div>
+      <!-- Sort Functionality -->
+      <div ng-include="'./partials/sort.html'"></div>
       <!-- <div ng-include="ctrl.includePath"> -->
       <!-- Show Flights -->
-      <div ng-repeat="flight in ctrl.flights">
+      <div ng-repeat="flight in ctrl.flights | orderBy: order">
         <div class="flight_info">
           <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
           <h5>Carrier: {{flight.carrier}}</h5>
@@ -57,11 +59,11 @@
           <h5>Launch Window: {{flight.launchWindow}}</h5>
           <h5>Launch Window: {{flight.destination}}</h5>
           <h5>Price: {{flight.price | currency}}</h5>
-          <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
+          <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger" ng-if="ctrl.loggedInUser.isAdmin === true"
             >Delete</a
           >
           <div class='edit_form'>
-            <form ng-submit="ctrl.editFlight(flight)">
+            <form ng-submit="ctrl.editFlight(flight)" ng-if="ctrl.loggedInUser.isAdmin === true">
               <h2>Edit Flight</h2>
               <input
                 <input
