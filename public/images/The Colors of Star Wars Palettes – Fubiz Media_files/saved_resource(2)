@@ -1,0 +1,35 @@
+
+function create_cookie_sync(url){
+    var ifrm = document.createElement("iframe");
+    ifrm.src = url;
+    ifrm.scrolling = "no";
+    ifrm.frameBorder = 0;
+    ifrm.width = 0;
+    ifrm.height = 0;
+    ifrm.style.margin = 0;
+    ifrm.style.padding = 0;
+    ifrm.style.display = "none";
+    ifrm.style.width = "0px";
+    ifrm.style.height = "0px";
+    top.document.body.appendChild(ifrm);
+}
+
+var list_cookies_sync = {"appnexus":{"order":0,"redirect_url":"https:\/\/secure.adnxs.com\/getuid?https:\/\/csync.smilewanted.com\/set_partner_userid_get\/appnexus\/$UID"},"rhythmone":{"order":1,"redirect_url":"https:\/\/sync.1rx.io\/usersync2\/smilewanted?gdpr=1&gdpr_consent=BOswf6DOswf6DAAABAFRC2-AAAAtF7_______9______9uz_Ov_v_f__33e8__9v_l_7_-___u_-33d4u_1vf99yfm1-7etr3tp_87ues2_Xur__79__3z3_9pxP78k89r7337Ew_v-_v-b7JCON_A"},"spotx":{"order":2,"redirect_url":"https:\/\/sync.search.spotxchange.com\/partner?adv_id=178357&redir=https:\/\/csync.smilewanted.com\/set_partner_userid_get\/spotx\/$SPOTX_USER_ID"},"smart":{"order":3,"redirect_url":"https:\/\/sync.smartadserver.com\/getuid?url=https:\/\/csync.smilewanted.com\/set_partner_userid_get\/smart\/[sas_uid]"},"improve":{"order":4,"redirect_url":"https:\/\/ice.360yield.com\/server_match?r=https:\/\/csync.smilewanted.com\/set_partner_userid_get\/improve\/{PUB_USER_ID}&partner_id=1010"},"rubicon":{"order":5,"redirect_url":"https:\/\/pixel.rubiconproject.com\/exchange\/sync.php?p=pbs-smilewanted"}};
+
+var output_list_cookies_sync = [];
+
+for(let [key, value] of Object.entries(list_cookies_sync)){
+    output_list_cookies_sync[value.order] = value.redirect_url;
+}
+
+var count_cookie_sync = 0;
+
+if(output_list_cookies_sync.length > 0){
+    output_list_cookies_sync.forEach(function(cookie_sync_url){
+        setTimeout(function(){ 
+            create_cookie_sync(cookie_sync_url);
+        }, 50*count_cookie_sync);
+
+        count_cookie_sync++;
+    });   
+}

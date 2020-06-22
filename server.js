@@ -36,7 +36,7 @@ mongoose.connect(
     }
   }
 );
-// Test
+// Test 
 // Controllers
 const flightsController = require("./controllers/flights.js");
 app.use("/flights", flightsController);

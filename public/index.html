@@ -57,9 +57,13 @@
           <h5>Launch Window: {{flight.launchWindow}}</h5>
           <h5>Launch Window: {{flight.destination}}</h5>
           <h5>Price: {{flight.price | currency}}</h5>
+          <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
+            >Delete</a
+          >
+
         </div>
         <!-- Edit Flights -->
-        <div>
+        <div class='edit_form'>
           <form ng-submit="ctrl.editFlight(flight)">
             <h2>Edit Flight</h2>
             <input
@@ -98,9 +102,6 @@
         </div>
         <!-- End Edit Flights -->
         <!-- Delete Flights -->
-        <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
-          >Delete</a
-        >
         <!-- </div> -->
       </div>
       <!-- End Show Flights -->
