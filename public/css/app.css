@@ -3,10 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1057&q=80);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
 }
 
 h1 {
@@ -22,9 +18,9 @@ h2 {
 }
 
 nav a {
-  color: white;
+  color: black;
   text-align: center;
-  text-shadow: black 2px 3px;
+  /* text-shadow: black 2px 3px; */
 }
 
 form {
@@ -37,4 +33,8 @@ input {
 
 .flight_info {
   text-shadow: black 2px 3px;
+}
+
+.signup {
+
 }
