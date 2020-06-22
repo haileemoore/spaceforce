@@ -19,6 +19,17 @@ app.controller("FlightsControl", [
     this.updateFlight = {};
     this.loggedInUser = false;
 
+    this.showSignupForm = false
+    this.showLoginForm = false
+
+    this.toggleShowSignupForm = () => {
+      this.showSignupForm = ! this.showSignupForm
+    }
+
+    this.toggleShowLoginForm = () => {
+      this.showLoginForm = ! this.showLoginForm
+    }
+
     ///////////////////////
     // CRUD FOR FLIGHTS
     ///////////////////////
@@ -93,6 +104,7 @@ app.controller("FlightsControl", [
 
     // Sign Up
     this.signup = () => {
+      this.showSignupForm = false
       $http({
         url: "/users",
         method: "POST",
@@ -108,6 +120,7 @@ app.controller("FlightsControl", [
 
     // Log In
     this.login = () => {
+      this.showLoginForm = false
       $http({
         url: "/session",
         method: "POST",
