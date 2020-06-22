@@ -43,41 +43,10 @@
       <!-- Nav -->
       <nav ng-include="'./partials/nav.html'"></nav>
       <!-- Create Flight Form -->
-      <form ng-submit="ctrl.createFlight()">
-        <h2>Create Flight</h2>
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.vehicleClass"
-          placeholder="Vehicle Class"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.carrier"
-          placeholder="Carrier"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.launchSite"
-          placeholder="Launch Site"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.launchWindow"
-          placeholder="Launch Window"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.destination"
-          placeholder="Destination"
-        />
-        <input
-          type="number"
-          ng-model="ctrl.newFlight.price"
-          placeholder="Price"
-        />
-        <input type="submit" value="Submit" class="btn btn-primary" />
-      </form>
-      <!-- End Create Flight Form -->
+      <div
+        ng-if="ctrl.loggedInUser.isAdmin === true"
+        ng-include="'./partials/create.html'"
+      ></div>
       <!-- <div ng-include="ctrl.includePath"> -->
       <!-- Show Flights -->
       <div ng-repeat="flight in ctrl.flights">
