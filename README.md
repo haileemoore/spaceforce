@@ -14,6 +14,7 @@
 - MongoDB
 - MongoDB Atlas
 - Mongoose
+- Postman
 
 ## App Features
 Full CRUD, AngularJS directives including filters and includes, User Authentication with password encryption using bcrypt, and Express-session for logged-in users. We also have partials included, and a responsive page.
@@ -27,8 +28,8 @@ If we took this further, we'd add a booking button, and have a fully-functioning
 
 ## Contributors
 
-- Alex Wander [Alex Wander](https://github.com/acwander)
+- Alex Wander [Github Handle: acwander](https://github.com/acwander)
 
-- Hailee Doyle [Hailee Doyle](https://github.com/haileedoyle)
+- Hailee Doyle [Github Handle: haileedoyle](https://github.com/haileedoyle)
 
-- Alex Ronalds [Alex Ronalds](https://github.com/expatbrat)
+- Alex Ronalds [Github Handle: expatbrat](https://github.com/expatbrat)
