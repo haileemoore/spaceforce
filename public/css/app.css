@@ -1,30 +1,68 @@
 
+body {
+  background-image: url('/images/spacebg.jpg');
+  background-repeat: repeat;
+}
+.create_flight {
+  background-color: red;
+  border-radius: 20px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1057&q=80);
-  background-repeat: no-repeat;
-  background-size: cover;
   color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+.nav {
+  background-color: #40a4d5;
+  color: white;
+  border-radius: 5px;
+  margin: 200;
+  border: 20px;
+}
+
+.edit_form {
+  background-color: #b06cae;
+  border-radius: 10px;
+}
+
+.flight_info {
+  display: flex;
+  flex-direction: column;
+  background-color: #cdb72d;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: yellow;
   text-shadow: black 4px 5px;
   letter-spacing: 10px;
   text-transform: uppercase;
+  padding: 20px;
 }
 
 h2 {
   text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  margin: 20px;
+}
+
+h5 {
+  padding: 0px 10px 0px 10px;
 }
 
 nav a {
-  color: white;
+  color: black;
   text-align: center;
-  text-shadow: black 2px 3px;
+  /* text-shadow: black 2px 3px; */
 }
 
 form {
@@ -37,4 +75,8 @@ input {
 
 .flight_info {
   text-shadow: black 2px 3px;
+}
+
+.signup {
+
 }

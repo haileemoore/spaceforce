@@ -1,16 +1,25 @@
 <ul class="nav justify-content-center">
   <!-- Flights -->
   <li>
-    <a ng-click="ctrl.changePath('flights')" class="nav-link">Flights</a>
+    <a href="#" ng-click="ctrl.changePath('flights')" class="nav-link"
+      >Flights</a
+    >
   </li>
+
   <!-- Authentication -->
   <!-- Sign Up -->
-  <div ng-if="ctrl.loggedInUser === false">
+  <div class="nav" ng-if="ctrl.loggedInUser === false">
     <li>
-      <a ng-click="ctrl.changePath('signup')" class="nav-link">Sign Up</a>
+      <a href="#" ng-click="ctrl.toggleShowSignupForm()" class="nav-link"
+        >Sign Up</a
+      >
     </li>
     <!-- Sign Up Form -->
-    <form ng-submit="ctrl.signup()">
+    <form
+      ng-submit="ctrl.signup()"
+      ng-show="ctrl.showSignupForm"
+      class="signup"
+    >
       Username: <input type="text" ng-model="ctrl.signupUsername" /><br />
       Password:
       <input type="password" ng-model="ctrl.signupPassword" /><br />
@@ -20,10 +29,12 @@
   <!-- Log In -->
   <div ng-if="ctrl.loggedInUser === false">
     <li>
-      <a ng-click="ctrl.changePath('login')" class="nav-link">Log In</a>
+      <a href="#" ng-click="ctrl.toggleShowLoginForm()" class="nav-link"
+        >Log In</a
+      >
     </li>
     <!-- Login Form -->
-    <form ng-submit="ctrl.login()">
+    <form ng-submit="ctrl.login()" ng-show="ctrl.showLoginForm">
       Username: <input type="text" ng-model="ctrl.loginUsername" /><br />
       Password:
       <input type="password" ng-model="ctrl.loginPassword" /><br />
@@ -32,8 +43,14 @@
   </div>
   <!-- Log Out Form -->
   <div ng-if="ctrl.loggedInUser !== false">
+    <li>Hello, {{ctrl.loggedInUser.username}}</li>
     <li>
-      <a ng-click="ctrl.logout()" class="btn btn-danger" class="nav-link">
+      <a
+        href="#"
+        ng-click="ctrl.logout()"
+        class="btn btn-danger nav-link logout_button"
+        
+      >
         Log Out
       </a>
     </li>
