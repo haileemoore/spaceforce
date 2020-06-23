@@ -8,6 +8,11 @@ body {
   border-radius: 20px;
 }
 
+.desctext {
+  color: grey;
+  font-weight: 700;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -32,12 +37,22 @@ body {
 
 .flight_info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #cdb72d;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+  text-shadow: black 2px 3px;
 }
+
+.flightinfopanel1 {
+  max-width: 450px;
+}
+
+.flightinfopanel2 {
+  max-width: 450px;
+}
+
 
 h1 {
   text-align: center;
@@ -50,7 +65,7 @@ h1 {
 
 h2 {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   font-size: 30px;
   margin: 20px;
 }
@@ -71,10 +86,6 @@ form {
 
 input {
   margin: 10px;
-}
-
-.flight_info {
-  text-shadow: black 2px 3px;
 }
 
 .signup {

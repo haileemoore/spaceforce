@@ -73,13 +73,18 @@
       <!-- Show Flights -->
       <div ng-repeat="flight in ctrl.flights | orderBy: order | filter: search">
         <div class="flight_info">
-          <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
-          <h5>Carrier: {{flight.carrier}}</h5>
-          <h5>Launch Site: {{flight.launchSite}}</h5>
-          <h5>Launch Window: {{flight.launchWindow}}</h5>
-          <h5>Launch Window: {{flight.destination}}</h5>
-          <h5>Price: {{flight.price | currency}}</h5>
+          <div class="flightinfopanel1">
+            <h5><span class='desctext'>Carrier:</span> {{flight.carrier}}</h5>
+            <h5><span class='desctext'>Vehicle Class:</span> {{flight.vehicleClass}}</h5>
+            <h5><span class='desctext'>Launch Window:</span> {{flight.launchWindow}}</h5>
+          </div>
 
+          <div class="flightinfopanel2">
+            <h5><span class='desctext'>Launch Site:</span> {{flight.launchSite}}</h5>
+            <h5><span class='desctext'>Destination:</span> {{flight.destination}}</h5>
+            <h5><span class='desctext'>Price:</span> {{flight.price | currency}}</h5>
+          </div>
+      </div>
           <div class="edit_form">
             <form
               ng-submit="ctrl.editFlight(flight)"
