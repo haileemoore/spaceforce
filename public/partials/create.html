@@ -5,17 +5,36 @@
       type="text"
       ng-model="ctrl.newFlight.vehicleClass"
       placeholder="Vehicle Class"
+      list="vehicles"
     />
+    <datalist id="vehicles">
+      <option value="Falcon 9"></option>
+      <option value="Atlas V"></option>
+      <option value="Delta 4-Heavy"></option>
+      <option value="Soyuz"></option>
+    </datalist>
     <input
       type="text"
       ng-model="ctrl.newFlight.carrier"
       placeholder="Carrier"
+      list="carrier"
     />
+    <datalist id="carrier">
+      <option value="SpaceX"></option>
+      <option value="Russian Space Federation, Kazakhstan"></option>
+      <option value="ULA"></option>
+    </datalist>
     <input
       type="text"
       ng-model="ctrl.newFlight.launchSite"
       placeholder="Launch Site"
+      list="launchSite"
     />
+    <datalist id="launchSite">
+      <option value="Cape Canaveral Air Force Station"></option>
+      <option value="Cape Canaveral Air Force Station - SLC-37B"></option>
+      <option value="Baikonur Cosmodrome"></option>
+    </datalist>
     <input
       type="text"
       ng-model="ctrl.newFlight.launchWindow"
@@ -25,7 +44,14 @@
       type="text"
       ng-model="ctrl.newFlight.destination"
       placeholder="Destination"
+      list="destination"
     />
+    <datalist id="destination">
+      <option value="Sub Earth Orbit"></option>
+      <option value="International Space Station"></option>
+      <option value="Moon"></option>
+      <option value="Mars"></option>
+    </datalist>
     <input type="number" ng-model="ctrl.newFlight.price" placeholder="Price" />
     <input type="submit" value="Submit" class="btn btn-primary" />
   </form>
