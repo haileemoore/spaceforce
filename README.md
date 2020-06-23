@@ -20,7 +20,7 @@
 Full CRUD, AngularJS directives including filters and includes, User Authentication with password encryption using bcrypt, and Express-session for logged-in users. We also have partials included, and a responsive page.
 
 ## Approach Taken
-We worked in a group of 3 partners. We decided to get obtain full CRUD functionality by Friday EOD. At the beginning of each day, we would open a Zoom room, discuss who would tackle what. We created a Trello board to keep track of everything, which we found very useful. We also decided that Hailee would refer to Alex Wander as "Alex 1," and Alex Ronalds as, "Alex 2." Once we'd settled on who was doing what, and what to refer to each other as, we'd co-code while in the Zoom room. If anyone ran into any issues, we'd just hop off mute, and problem solve.  
+We worked in a group of 3 partners. We decided to aim for full CRUD functionality by Friday EOD. At the beginning of each day, we would open a Zoom room, discuss who would tackle what. We created a Trello board to keep track of everything, which we found very useful. We also decided that Hailee would refer to Alex Wander as "Alex 1," and Alex Ronalds as, "Alex 2." Once we'd settled on who was doing what, and what to refer to each other as, we'd co-code while in the Zoom room. If anyone ran into any issues, we'd just hop off mute, and problem solve.  
 Alex 1 took the lead on the JavaScript files, and Hailee backed him up on that. Alex 2 set our app up with data, CSS, and JavaScript as well. Hailee was the lead on deploying to Heroku, and the Alex's both worked on extra Angular features including sort, and search.
 
 ## Unsolved Problems
