@@ -9,7 +9,16 @@ body {
   flex-direction: column;
   justify-content: center;
   color: white;
-  width: 100%
+  width: 100%;
+  padding: 20px;
+}
+
+.nav {
+  background-color: #40a4d5;
+  color: white;
+  border-radius: 5px;
+  margin: 200;
+  border: 20px;
 }
 
 .edit_form {
@@ -22,6 +31,8 @@ body {
   flex-direction: column;
   background-color: #cdb72d;
   border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
 h1 {
@@ -30,10 +41,14 @@ h1 {
   text-shadow: black 4px 5px;
   letter-spacing: 10px;
   text-transform: uppercase;
+  padding: 20px;
 }
 
 h2 {
   text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  margin: 20px;
 }
 
 h5 {
