@@ -43,44 +43,35 @@
       <!-- Nav -->
       <nav ng-include="'./partials/nav.html'"></nav>
       <!-- Create Flight Form -->
-      <form ng-submit="ctrl.createFlight()">
-        <h2>Create Flight</h2>
+      <div
+        ng-if="ctrl.loggedInUser.isAdmin === true"
+        ng-include="'./partials/create.html'"
+      ></div>
+      <!-- Sort Functionality -->
+      <div>
+        <label for="price-up">Price Low to High</label>
         <input
-          type="text"
-          ng-model="ctrl.newFlight.vehicleClass"
-          placeholder="Vehicle Class"
+          type="radio"
+          name="order"
+          value="price"
+          ng-model="order"
+          id="price-up"
         />
+        <label for="price-down">Price High to Low</label>
         <input
-          type="text"
-          ng-model="ctrl.newFlight.carrier"
-          placeholder="Carrier"
+          type="radio"
+          name="order"
+          value="-price"
+          ng-model="order"
+          id="price-down"
         />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.launchSite"
-          placeholder="Launch Site"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.launchWindow"
-          placeholder="Launch Window"
-        />
-        <input
-          type="text"
-          ng-model="ctrl.newFlight.destination"
-          placeholder="Destination"
-        />
-        <input
-          type="number"
-          ng-model="ctrl.newFlight.price"
-          placeholder="Price"
-        />
-        <input type="submit" value="Submit" class="btn btn-primary" />
-      </form>
-      <!-- End Create Flight Form -->
-      <!-- <div ng-include="ctrl.includePath"> -->
+      </div>
+      <!-- Search Bar -->
+      <label for="Search">
+        <input type="text" placeholder="Search" ng-model="search" />
+      </label>
       <!-- Show Flights -->
-      <div ng-repeat="flight in ctrl.flights">
+      <div ng-repeat="flight in ctrl.flights | orderBy: order | filter: search">
         <div class="flight_info">
           <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
           <h5>Carrier: {{flight.carrier}}</h5>
@@ -88,50 +79,57 @@
           <h5>Launch Window: {{flight.launchWindow}}</h5>
           <h5>Launch Window: {{flight.destination}}</h5>
           <h5>Price: {{flight.price | currency}}</h5>
-        </div>
-        <!-- Edit Flights -->
-        <div>
-          <form ng-submit="ctrl.editFlight(flight)">
-            <h2>Edit Flight</h2>
-            <input
+          <a
+            href="#"
+            ng-click="ctrl.deleteFlight(flight)"
+            class="btn btn-danger"
+            ng-if="ctrl.loggedInUser.isAdmin === true"
+            >Delete</a
+          >
+          <div class="edit_form">
+            <form
+              ng-submit="ctrl.editFlight(flight)"
+              ng-if="ctrl.loggedInUser.isAdmin === true"
+            >
+              <h2>Edit Flight</h2>
               <input
-              type="text"
-              ng-model="ctrl.updateFlight.vehicleClass"
-              placeholder="Vehicle Class"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.carrier"
-              placeholder="Carrier"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.launchSite"
-              placeholder="Launch Site"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.launchWindow"
-              placeholder="Launch Window"
-            />
-            <input
-              type="text"
-              ng-model="ctrl.updateFlight.destination"
-              placeholder="Destination"
-            />
-            <input
-              type="number"
-              ng-model="ctrl.updateFlight.price"
-              placeholder="Price"
-            />
-            <input type="submit" value="Submit" class="btn btn-primary" />
-          </form>
+                <input
+                type="text"
+                ng-model="ctrl.updateFlight.vehicleClass"
+                placeholder="Vehicle Class"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.carrier"
+                placeholder="Carrier"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.launchSite"
+                placeholder="Launch Site"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.launchWindow"
+                placeholder="Launch Window"
+              />
+              <input
+                type="text"
+                ng-model="ctrl.updateFlight.destination"
+                placeholder="Destination"
+              />
+              <input
+                type="number"
+                ng-model="ctrl.updateFlight.price"
+                placeholder="Price"
+              />
+              <input type="submit" value="Submit" class="btn btn-primary" />
+            </form>
+          </div>
+          <!-- Edit Flights -->
         </div>
         <!-- End Edit Flights -->
         <!-- Delete Flights -->
-        <a href="#" ng-click="ctrl.deleteFlight(flight)" class="btn btn-danger"
-          >Delete</a
-        >
         <!-- </div> -->
       </div>
       <!-- End Show Flights -->
