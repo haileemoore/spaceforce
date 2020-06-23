@@ -66,9 +66,12 @@
           id="price-down"
         />
       </div>
-      <!-- <div ng-include="ctrl.includePath"> -->
+      <!-- Search Bar -->
+      <label for="Search">
+        <input type="text" placeholder="Search" ng-model="search" />
+      </label>
       <!-- Show Flights -->
-      <div ng-repeat="flight in ctrl.flights | orderBy: order">
+      <div ng-repeat="flight in ctrl.flights | orderBy: order | filter: search">
         <div class="flight_info">
           <h5>Vehicle Class: {{flight.vehicleClass}}</h5>
           <h5>Carrier: {{flight.carrier}}</h5>
