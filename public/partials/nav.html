@@ -1,8 +1,5 @@
 <ul class="nav justify-content-center">
   <!-- Flights -->
-  <li>
-    <a href="#" ng-click="ctrl.changePath('flights')" class="nav-link">Flights</a>
-  </li>
   <!-- Authentication -->
   <!-- Sign Up -->
   <div class='nav' ng-if="ctrl.loggedInUser === false">
@@ -33,7 +30,7 @@
   <!-- Log Out Form -->
   <div ng-if="ctrl.loggedInUser !== false">
     <li>
-      <a href="#" ng-click="ctrl.logout()" class="btn btn-danger" class="nav-link">
+      <a href="#" class="logout_button" ng-click="ctrl.logout()" class="btn btn-danger" class="nav-link">
         Log Out
       </a>
     </li>

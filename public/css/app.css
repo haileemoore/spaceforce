@@ -3,6 +3,10 @@ body {
   background-image: url('/images/spacebg.jpg');
   background-repeat: repeat;
 }
+.create_flight {
+  background-color: red;
+  border-radius: 20px;
+}
 
 .container {
   display: flex;
