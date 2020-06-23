@@ -3,7 +3,17 @@
 ### [Space Force Travel](https://spaceforce.herokuapp.com/)
 
 ## Tech Used
-### JavaScript, Sass, Bootstrap CSS, Node.js, ExpressJS, bcrypt, express-session, AngularJS, MongoDB, MongoDB Atlas, Mongoose
+- JavaScript
+- Sass
+- Bootstrap CSS
+- Node.js
+- ExpressJS
+- Bcrypt
+- Express-session
+- AngularJS
+- MongoDB
+- MongoDB Atlas
+- Mongoose
 
 ## App Features
 ### Full CRUD, AngularJS directives including filters and includes, User Authentication with password encryption using bcrypt, and Express-session for logged-in users. We also have partials included, and a responsive page.
