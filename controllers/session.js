@@ -4,6 +4,7 @@ const User = require("../models/users_model.js");
 const bcrypt = require("bcrypt");
 
 router.post("/", (req, res) => {
+  console.log('Hit Post Route')
   User.findOne({ username: req.body.username }, (error, foundUser) => {
     if (foundUser === null) {
       res.json({
