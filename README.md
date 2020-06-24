@@ -4,7 +4,6 @@
 
 ## Tech Used
 - JavaScript
-- Sass
 - Bootstrap CSS
 - Node.js
 - ExpressJS
